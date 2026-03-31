@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "WEB601 Portfolio Site",
+    "description": "A personal site built with Node.js and Express.",
+    "url": "https://github.com/username/web601",
+    "status": "in-progress"
+  },
+  {
+    "id": 2,
+    "title": "Weather Dashboard",
+    "description": "Fetches and displays weather data from a public API.",
+    "url": "https://github.com/username/weather-dashboard",
+    "status": "complete"
+  },
+  {
+    "id": 3,
+    "title": "Recipe Finder",
+    "description": "Search and save recipes using a third-party API.",
+    "url": "https://github.com/username/recipe-finder",
+    "status": "planned"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "JavaScript",
+    "level": "intermediate"
+  },
+  {
+    "id": 2,
+    "name": "Node.js",
+    "level": "intermediate"
+  },
+  {
+    "id": 3,
+    "name": "Express",
+    "level": "beginner"
+  }
+]
