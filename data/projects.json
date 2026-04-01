@@ -15,8 +15,8 @@
   },
   {
     "id": 3,
-    "title": "zandis cool project",
-    "description": "frfr.",
+    "title": "Recipie finder",
+    "description": "A finder of recipies.",
     "url": "https://github.com/username/recipe-finder",
     "status": "planned"
   }
