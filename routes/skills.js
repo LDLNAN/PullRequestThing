@@ -22,7 +22,11 @@ function writeSkills(skills) {
 // - Write the updated array back to the file using writeSkills()
 // - Respond with 201 and the newly created skill as JSON
 router.post('/', (req, res) => {
-
+  const currentSkills = readSkills();
+  const newSkill = {"id": currentSkills.length + 1, "name": req.body.name, "level": req.body.level};
+  const newSkills = currentSkills.Append(newSkill);
+  writeSkills(newSkills);
+  res.status(201).json(newSkill);
 });
 
 // TODO: Implement DELETE /api/skills/:id
@@ -34,7 +38,15 @@ router.post('/', (req, res) => {
 // - Write the updated array back to the file using writeSkills()
 // - Respond with 200 and the deleted skill as JSON
 router.delete('/:id', (req, res) => {
-
+  const currentSkills = readSkills();
+  const foundSkill = currentSkills[parseInt(req.params.id)];
+  if (!foundSkill)
+  {
+    res.status(404).json({ "error": 'Skill not found'})
+  }
+  currentSkills.splice(parseInt(foundSkill.id), 1)
+  writeSkills(currentSkills)
+  res.status(200).json(foundSkill)
 });
 
 module.exports = router;
