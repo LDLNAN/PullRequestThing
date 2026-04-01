@@ -18,7 +18,8 @@ function writeProjects(projects) {
 // - Read all projects from the data file using readProjects()
 // - Respond with the full array as JSON
 router.get('/', (req, res) => {
-
+    const projects = readProjects();
+    res.json(projects);
 });
 
 // TODO: Implement PUT /api/projects/:id
@@ -30,8 +31,17 @@ router.get('/', (req, res) => {
 //   (hint: use the spread operator { ...existing, ...req.body })
 // - Write the updated array back to the file using writeProjects()
 // - Respond with the updated project as JSON
-router.put('/:id', (req, res) => {
 
+router.put('/:id', (req, res) => {
+    const projects = readProjects();
+    const index = projects.findIndex(p => p.id === parseInt(req.params.id));
+    if (index === -1) {
+        return res.status(404).json({ error: 'Project not found' });
+    }
+    projects[index] = { ...projects[index], ...req.body };
+    writeProjects(projects);
+    return res.json(projects[index]);
 });
+
 
 module.exports = router;

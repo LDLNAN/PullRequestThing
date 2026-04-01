@@ -15,8 +15,8 @@
   },
   {
     "id": 3,
-    "title": "Recipe Finder",
-    "description": "Search and save recipes using a third-party API.",
+    "title": "Recipie finder",
+    "description": "A finder of recipies.",
     "url": "https://github.com/username/recipe-finder",
     "status": "planned"
   }
