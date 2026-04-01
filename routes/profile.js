@@ -18,6 +18,8 @@ function writeProfile(profile) {
 // - Read the profile from the data file using readProfile()
 // - Respond with the profile object as JSON
 router.get('/', (req, res) => {
+  const profiles = readProfile();
+  res.json(profiles);
 
 });
 
@@ -28,7 +30,10 @@ router.get('/', (req, res) => {
 // - Write the updated profile back to the file using writeProfile()
 // - Respond with the updated profile as JSON
 router.put('/', (req, res) => {
-
+  const profiles = readProfile();
+  const newProfile = {...profiles, ...req.body};
+  writeProfile(newProfile);
+  res.json(newProfile);
 });
 
 module.exports = router;
